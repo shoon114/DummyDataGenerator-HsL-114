@@ -146,10 +146,15 @@
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ConsoleInput\ConsoleInputReader.cpp" />
+    <ClCompile Include="src\Schema\KeyType.cpp" />
+    <ClCompile Include="src\Schema\SchemaBuilder.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ConsoleInput\ConsoleInputReader.h" />
     <ClInclude Include="src\ConsoleInput\RawUserInput.h" />
+    <ClInclude Include="src\Schema\KeyType.h" />
+    <ClInclude Include="src\Schema\DataSchema.h" />
+    <ClInclude Include="src\Schema\SchemaBuilder.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

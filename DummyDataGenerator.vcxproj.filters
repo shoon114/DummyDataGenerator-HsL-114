@@ -19,6 +19,12 @@
     <Filter Include="헤더 파일\ConsoleInput">
       <UniqueIdentifier>{6f3f6f2a-1a2b-4a3c-9d4e-5f6a7b8c9d02}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Schema">
+      <UniqueIdentifier>{6f3f6f2a-1a2b-4a3c-9d4e-5f6a7b8c9d03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Schema">
+      <UniqueIdentifier>{6f3f6f2a-1a2b-4a3c-9d4e-5f6a7b8c9d04}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -27,6 +33,12 @@
     <ClCompile Include="src\ConsoleInput\ConsoleInputReader.cpp">
       <Filter>소스 파일\ConsoleInput</Filter>
     </ClCompile>
+    <ClCompile Include="src\Schema\KeyType.cpp">
+      <Filter>소스 파일\Schema</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Schema\SchemaBuilder.cpp">
+      <Filter>소스 파일\Schema</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ConsoleInput\ConsoleInputReader.h">
@@ -34,6 +46,15 @@
     </ClInclude>
     <ClInclude Include="src\ConsoleInput\RawUserInput.h">
       <Filter>헤더 파일\ConsoleInput</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Schema\KeyType.h">
+      <Filter>헤더 파일\Schema</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Schema\DataSchema.h">
+      <Filter>헤더 파일\Schema</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Schema\SchemaBuilder.h">
+      <Filter>헤더 파일\Schema</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

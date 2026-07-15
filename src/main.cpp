@@ -5,6 +5,7 @@
 #endif
 
 #include "ConsoleInput/ConsoleInputReader.h"
+#include "Schema/SchemaBuilder.h"
 
 int main()
 {
@@ -19,12 +20,15 @@ int main()
         ddg::ConsoleInputReader reader;
         const ddg::RawUserInput input = reader.readUserInput();
 
-        std::cout << "\n--- 입력 결과 (Phase 1) ---\n";
-        for (const auto& key : input.keys)
+        ddg::SchemaBuilder schemaBuilder;
+        const ddg::DataSchema schema = schemaBuilder.build(input);
+
+        std::cout << "\n--- 구성된 Data Schema (Phase 2) ---\n";
+        for (const auto& key : schema.keys)
         {
-            std::cout << "- " << key.name << " : " << key.typeName << "\n";
+            std::cout << "- " << key.name << " : " << ddg::KeyTypeUtils::toString(key.type) << "\n";
         }
-        std::cout << "총 item 개수: " << input.itemCount << "\n";
+        std::cout << "총 item 개수: " << schema.itemCount << "\n";
     }
     catch (const std::exception& e)
     {
