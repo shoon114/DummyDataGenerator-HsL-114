@@ -143,7 +143,14 @@
     </Manifest>
   </ItemDefinitionGroup>
 
-  <ItemGroup></ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\ConsoleInput\ConsoleInputReader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ConsoleInput\ConsoleInputReader.h" />
+    <ClInclude Include="src\ConsoleInput\RawUserInput.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
