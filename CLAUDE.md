@@ -10,6 +10,8 @@
 
 즉, 사용자가 데이터의 스키마(key 구조)를 정의하면, 프로그램은 그 스키마에 맞는 더미 데이터를 대량으로 생성해 JSON 형태의 DB로 출력하는 것이 핵심 동작이다.
 
+구체적인 기능 요구사항은 [docs/requirement/top-requirement.md](docs/requirement/top-requirement.md)를 따른다.
+
 ## 현재 상태
 
 Visual Studio C++ 프로젝트 스켈레톤만 존재하며, 실제 구현은 아직 시작 전 단계.
