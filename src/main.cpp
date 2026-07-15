@@ -1,11 +1,39 @@
 ﻿#include <iostream>
+#include <string>
+#include <type_traits>
 
 #ifdef _WIN32
 #include <windows.h>
 #endif
 
 #include "ConsoleInput/ConsoleInputReader.h"
+#include "DummyData/DummyDataGenerator.h"
 #include "Schema/SchemaBuilder.h"
+
+namespace
+{
+    std::string toDisplayString(const ddg::DummyValue& value)
+    {
+        return std::visit(
+            [](const auto& v) -> std::string
+            {
+                using T = std::decay_t<decltype(v)>;
+                if constexpr (std::is_same_v<T, bool>)
+                {
+                    return v ? "true" : "false";
+                }
+                else if constexpr (std::is_same_v<T, std::string>)
+                {
+                    return v;
+                }
+                else
+                {
+                    return std::to_string(v);
+                }
+            },
+            value.value);
+    }
+}
 
 int main()
 {
@@ -29,6 +57,27 @@ int main()
             std::cout << "- " << key.name << " : " << ddg::KeyTypeUtils::toString(key.type) << "\n";
         }
         std::cout << "총 item 개수: " << schema.itemCount << "\n";
+
+        ddg::DummyDataGenerator dummyDataGenerator;
+        const ddg::DummyDataSet dataSet = dummyDataGenerator.generate(schema);
+
+        constexpr size_t previewCount = 5;
+        std::cout << "\n--- 생성된 Dummy Data 미리보기 (Phase 3, 최대 " << previewCount << "개) ---\n";
+        for (size_t i = 0; i < dataSet.items.size() && i < previewCount; ++i)
+        {
+            std::cout << "[" << i << "] ";
+            const auto& fields = dataSet.items[i].fields;
+            for (size_t f = 0; f < fields.size(); ++f)
+            {
+                std::cout << fields[f].first << "=" << toDisplayString(fields[f].second);
+                if (f + 1 < fields.size())
+                {
+                    std::cout << ", ";
+                }
+            }
+            std::cout << "\n";
+        }
+        std::cout << "총 생성된 item 개수: " << dataSet.items.size() << "\n";
     }
     catch (const std::exception& e)
     {

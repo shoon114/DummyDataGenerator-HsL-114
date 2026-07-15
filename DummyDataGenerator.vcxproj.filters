@@ -25,6 +25,12 @@
     <Filter Include="헤더 파일\Schema">
       <UniqueIdentifier>{6f3f6f2a-1a2b-4a3c-9d4e-5f6a7b8c9d04}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\DummyData">
+      <UniqueIdentifier>{6f3f6f2a-1a2b-4a3c-9d4e-5f6a7b8c9d05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\DummyData">
+      <UniqueIdentifier>{6f3f6f2a-1a2b-4a3c-9d4e-5f6a7b8c9d06}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -38,6 +44,12 @@
     </ClCompile>
     <ClCompile Include="src\Schema\SchemaBuilder.cpp">
       <Filter>소스 파일\Schema</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DummyData\ValueGenerators.cpp">
+      <Filter>소스 파일\DummyData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DummyData\DummyDataGenerator.cpp">
+      <Filter>소스 파일\DummyData</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -55,6 +67,18 @@
     </ClInclude>
     <ClInclude Include="src\Schema\SchemaBuilder.h">
       <Filter>헤더 파일\Schema</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DummyData\DummyValue.h">
+      <Filter>헤더 파일\DummyData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DummyData\IValueGenerator.h">
+      <Filter>헤더 파일\DummyData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DummyData\ValueGenerators.h">
+      <Filter>헤더 파일\DummyData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DummyData\DummyDataGenerator.h">
+      <Filter>헤더 파일\DummyData</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
