@@ -74,6 +74,10 @@
 
   <PropertyGroup Label="UserMacros" />
 
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnableManifest>true</VcpkgEnableManifest>
+  </PropertyGroup>
+
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -81,6 +85,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -99,6 +104,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -115,6 +121,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -133,6 +140,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -143,7 +151,29 @@
     </Manifest>
   </ItemDefinitionGroup>
 
-  <ItemGroup></ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\ConsoleInput\ConsoleInputReader.cpp" />
+    <ClCompile Include="src\Schema\KeyType.cpp" />
+    <ClCompile Include="src\Schema\SchemaBuilder.cpp" />
+    <ClCompile Include="src\DummyData\ValueGenerators.cpp" />
+    <ClCompile Include="src\DummyData\DummyDataGenerator.cpp" />
+    <ClCompile Include="src\JsonOutput\JsonConverter.cpp" />
+    <ClCompile Include="src\JsonOutput\JsonFileWriter.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ConsoleInput\ConsoleInputReader.h" />
+    <ClInclude Include="src\ConsoleInput\RawUserInput.h" />
+    <ClInclude Include="src\Schema\KeyType.h" />
+    <ClInclude Include="src\Schema\DataSchema.h" />
+    <ClInclude Include="src\Schema\SchemaBuilder.h" />
+    <ClInclude Include="src\DummyData\DummyValue.h" />
+    <ClInclude Include="src\DummyData\IValueGenerator.h" />
+    <ClInclude Include="src\DummyData\ValueGenerators.h" />
+    <ClInclude Include="src\DummyData\DummyDataGenerator.h" />
+    <ClInclude Include="src\JsonOutput\JsonConverter.h" />
+    <ClInclude Include="src\JsonOutput\JsonFileWriter.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

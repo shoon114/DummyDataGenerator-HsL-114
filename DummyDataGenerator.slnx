@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="DummyDataGenerator.vcxproj" />
+  <Project Path="DummyDataGenerator.vcxproj" Id="99b115cb-f426-45e0-a82d-7ee2eb91f310" />
 </Solution>

@@ -18,6 +18,9 @@ out/
 CMakeSettings.json
 .vscode/
 
+# vcpkg manifest mode local install output
+vcpkg_installed/
+
 # Claude Code local settings
 .claude/settings.local.json
 .mcp.json
