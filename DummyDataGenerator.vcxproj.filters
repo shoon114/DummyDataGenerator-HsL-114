@@ -31,6 +31,12 @@
     <Filter Include="헤더 파일\DummyData">
       <UniqueIdentifier>{6f3f6f2a-1a2b-4a3c-9d4e-5f6a7b8c9d06}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\JsonOutput">
+      <UniqueIdentifier>{6f3f6f2a-1a2b-4a3c-9d4e-5f6a7b8c9d07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\JsonOutput">
+      <UniqueIdentifier>{6f3f6f2a-1a2b-4a3c-9d4e-5f6a7b8c9d08}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -50,6 +56,12 @@
     </ClCompile>
     <ClCompile Include="src\DummyData\DummyDataGenerator.cpp">
       <Filter>소스 파일\DummyData</Filter>
+    </ClCompile>
+    <ClCompile Include="src\JsonOutput\JsonConverter.cpp">
+      <Filter>소스 파일\JsonOutput</Filter>
+    </ClCompile>
+    <ClCompile Include="src\JsonOutput\JsonFileWriter.cpp">
+      <Filter>소스 파일\JsonOutput</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +91,12 @@
     </ClInclude>
     <ClInclude Include="src\DummyData\DummyDataGenerator.h">
       <Filter>헤더 파일\DummyData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JsonOutput\JsonConverter.h">
+      <Filter>헤더 파일\JsonOutput</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JsonOutput\JsonFileWriter.h">
+      <Filter>헤더 파일\JsonOutput</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

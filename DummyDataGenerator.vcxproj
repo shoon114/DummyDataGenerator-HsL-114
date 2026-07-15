@@ -74,6 +74,10 @@
 
   <PropertyGroup Label="UserMacros" />
 
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnableManifest>true</VcpkgEnableManifest>
+  </PropertyGroup>
+
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -154,6 +158,8 @@
     <ClCompile Include="src\Schema\SchemaBuilder.cpp" />
     <ClCompile Include="src\DummyData\ValueGenerators.cpp" />
     <ClCompile Include="src\DummyData\DummyDataGenerator.cpp" />
+    <ClCompile Include="src\JsonOutput\JsonConverter.cpp" />
+    <ClCompile Include="src\JsonOutput\JsonFileWriter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ConsoleInput\ConsoleInputReader.h" />
@@ -165,6 +171,8 @@
     <ClInclude Include="src\DummyData\IValueGenerator.h" />
     <ClInclude Include="src\DummyData\ValueGenerators.h" />
     <ClInclude Include="src\DummyData\DummyDataGenerator.h" />
+    <ClInclude Include="src\JsonOutput\JsonConverter.h" />
+    <ClInclude Include="src\JsonOutput\JsonFileWriter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

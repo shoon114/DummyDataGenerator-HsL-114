@@ -8,6 +8,8 @@
 
 #include "ConsoleInput/ConsoleInputReader.h"
 #include "DummyData/DummyDataGenerator.h"
+#include "JsonOutput/JsonConverter.h"
+#include "JsonOutput/JsonFileWriter.h"
 #include "Schema/SchemaBuilder.h"
 
 namespace
@@ -78,6 +80,15 @@ int main()
             std::cout << "\n";
         }
         std::cout << "총 생성된 item 개수: " << dataSet.items.size() << "\n";
+
+        ddg::JsonConverter jsonConverter;
+        const nlohmann::json json = jsonConverter.toJson(dataSet);
+
+        ddg::JsonFileWriter jsonFileWriter;
+        const std::string savedPath = jsonFileWriter.write(json, "dummy_data.json");
+
+        std::cout << "\n--- JSON 파일 저장 (Phase 4) ---\n";
+        std::cout << "저장 경로: " << savedPath << "\n";
     }
     catch (const std::exception& e)
     {
