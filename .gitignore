@@ -1,0 +1,23 @@
+# Visual Studio
+.vs/
+*.user
+Debug/
+Release/
+x64/
+x86/
+Win32/
+*.ilk
+*.pdb
+*.obj
+*.exe
+*.log
+*.idb
+*.tlog
+*.vcxproj.filters.user
+out/
+CMakeSettings.json
+.vscode/
+
+# Claude Code local settings
+.claude/settings.local.json
+.mcp.json
